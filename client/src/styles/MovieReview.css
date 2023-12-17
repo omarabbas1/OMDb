@@ -1,0 +1,236 @@
+/* .movies-review {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.movies-review .card-container .card {
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.movies-review .card-img-top {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.movies-review .movie-info {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.movies-review .review-section {
+    margin-top: 30px;
+}
+
+.movies-review .add-review,
+.movies-review .view-reviews {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.movies-review .add-review div,
+.movies-review .view-reviews .filter {
+    margin-bottom: 15px;
+}
+
+.movies-review input[type="text"],
+.movies-review textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin-top: 8px;
+}
+
+.movies-review button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.movies-review button:hover {
+    background-color: #0056b3;
+}
+
+.movies-review .view-reviews h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.movies-review .review-item {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 4px;
+    margin-top: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.movies-review .review-item h4 {
+    margin-bottom: 5px;
+    color: #007bff;
+}
+
+.movies-review .review-item p {
+    margin-bottom: 5px;
+    line-height: 1.5;
+}
+
+.movies-review .filter label {
+    margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+    .card-container .card {
+        width: 100%;
+    }
+} */
+
+
+
+/* Base styles */
+.movies-review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: white;
+}
+
+.card-container {
+    flex: 0 0 25%;
+    margin-right: 20px;
+}
+
+.card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.movie-info {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.review-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+.add-review {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.add-review div {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.add-review input[type='text'],
+.add-review textarea {
+    width: calc(100% - 20px);
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #000;
+    color: #000;
+}
+
+.add-review textarea {
+    resize: vertical;
+}
+
+.add-review button {
+    padding: 8px 16px;
+    background-color: #f3ce13;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-review button:hover {
+    background-color: #ffc107;
+}
+
+.view-reviews {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.filter {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.All-reviews {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.review-item {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 8px;
+    background-color: white;
+    color: #000;
+}
+
+.review-item h4 {
+    margin-bottom: 5px;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .card-container {
+        flex: 0 0 100%;
+        margin-right: 0;
+    }
+
+    .review-section,
+    .add-review,
+    .All-reviews {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .add-review input[type='text'],
+    .add-review textarea {
+        width: 100%;
+    }
+}

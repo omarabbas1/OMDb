@@ -1,0 +1,114 @@
+.content-moviedetail {
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: black;
+}
+
+.content-moviedetail .movie-details-container {
+    display: flex;
+    margin-left: 0%;
+}
+
+.content-moviedetail .image {
+    flex: 0 0 auto;
+}
+
+.content-moviedetail .image img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.content-moviedetail .text {
+    flex: 1;
+    margin-left: 30px;
+    margin-right: 0px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 170px;
+    height: 200px;
+}
+
+.content-moviedetail .text h2 {
+    font-size: 25px;
+    margin-bottom: 5%;
+}
+
+.content-moviedetail .text p {
+    font-size: 20px;
+}
+
+.content-moviedetail .trailer {
+    flex: 0 0 auto;
+    margin-left: 0px;
+}
+
+.content-moviedetail .trailer iframe {
+    width: 560px;
+    height: 315px;
+    border: none;
+}
+
+.other-trailers {
+    background-color: #f3ce13;
+    color: #000;
+    padding: 1%;
+    border-radius: 5px;
+    width: fit-content;
+    margin-top: 15%;
+    margin-left: 35%;
+}
+
+/* Define a media query for smaller screens */
+@media (max-width: 768px) {
+    .content-moviedetail {
+        flex-direction: column;
+        /* Change the flex direction to stack elements vertically */
+        align-items: center;
+        /* Center items in the column layout */
+    }
+
+    .content-moviedetail .movie-details-container {
+        width: 90%;
+        /* Set a width for the container to control its size */
+        max-width: 100%;
+        /* Ensure it doesn't exceed its container */
+        margin: 0 auto;
+        /* Center the container */
+    }
+
+    .content-moviedetail .text {
+        width: 100%;
+        /* Set full width for the text section */
+        margin-top: 20px;
+        /* Add some space between image and text */
+        text-align: center;
+        /* Center the text content */
+        font-size: 10px;
+    }
+
+    .content-moviedetail .image {
+        width: 50%;
+        /* Set the image container to take full width */
+        max-width: 100%;
+        /* Ensure it doesn't exceed its container */
+        margin-bottom: 20px;
+        /* Add spacing between the image and text */
+    }
+
+    .content-moviedetail .image img {
+        width: 100%;
+        /* Make the image responsive to its container width */
+        max-width: 100%;
+        /* Ensure the image doesn't exceed its container */
+        border-radius: 8px;
+        /* Apply border-radius to the image */
+    }
+
+    .content-moviedetail .trailer {
+        display: none;
+        /* Hide the trailer section on smaller screens */
+    }
+}

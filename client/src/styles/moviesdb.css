@@ -1,0 +1,89 @@
+.movies-dbManipulation {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #fafafa;
+    /* Soft background color */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    width: 90%;
+    max-width: 1300px;
+    margin: 50px auto;
+    /* Centering the container on the page */
+}
+
+.movies-dbManipulation h1 {
+    font-size: 24px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.movies-dbManipulation form {
+    flex: 1;
+    /* Makes sure each form takes equal width */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    /* Rounded corners for forms */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Slight shadow to give some depth */
+    margin: 0 10px;
+    /* Spacing between forms */
+    position: relative;
+    /* To help position the h1 correctly */
+}
+
+.movies-dbManipulation form:first-child {
+    margin-left: 0;
+}
+
+.movies-dbManipulation form:last-child {
+    margin-right: 0;
+}
+
+.movies-dbManipulation label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.movies-dbManipulation input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    /* Rounded corners for input fields */
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.movies-dbManipulation input:hover,
+.movies-dbManipulation input:focus {
+    border-color: #a0a0a0;
+}
+
+.movies-dbManipulation button {
+    display: block;
+    background-color: #007bff;
+    /* Blue color for the button */
+    color: #fff;
+    /* White text color */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    /* Rounded corners for button */
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+.movies-dbManipulation button:hover {
+    background-color: #0056b3;
+}

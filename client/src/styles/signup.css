@@ -1,0 +1,87 @@
+.signup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+    gap: 10px;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+.signup-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    background-color: #ffffff;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.signup form {
+    width: 100%;
+}
+
+.signup h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.signup button {
+    background-color: #FFC107;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.signup button:hover {
+    background-color: #e5a600;
+}
+
+.signup input[type='text'],
+.signup input[type='password'] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-left: 0px;
+}
+
+.signup label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.signup .signup-div,
+.signup .createacc-div {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.signup .createacc-div {
+    padding: 10px;
+}
+
+.signup p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signup .error {
+    color: red;
+}
+
+.signup a{
+    width: 10%;
+}
