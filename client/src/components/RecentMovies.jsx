@@ -21,7 +21,6 @@ const RecentMovies = () => {
             nextMovie();
         }, 5000);
 
-        // Clear the timeout when the component unmounts or movies change
         return () => clearTimeout(timeoutId);
     }, [currentIndex, movies]);
 

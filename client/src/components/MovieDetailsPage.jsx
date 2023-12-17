@@ -50,20 +50,6 @@ const MovieDetailsPage = () => {
         }
     };
     return (
-        // <div className="content">
-        //     {movie && (
-        //         <div className="movie-details-container">
-        //         <img src={movie.image} alt={movie.name} />
-        //         <div className="movie-details-text">
-        //             <h2>{movie.name}</h2>
-        //             <p>Genre: {movie.genre}</p>
-        //             <p>Director: {movie.director}</p>
-        //             <p>Writer: {movie.writer}</p>
-        //             <p>Rating: {movie.star}</p>
-        //         </div>
-        //         </div>
-        //     )}
-        // </div>
         <div className="content-moviedetail">
             {movie && (
                 <div className="movie-details-container">

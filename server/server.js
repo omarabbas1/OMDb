@@ -3,7 +3,6 @@ const app = express();
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const { db, getDocs, addDoc, usersRef, updateDoc, moviesRef, Timestamp, doc, getDoc, reviewRef, actorsRef } = require('./config');
-// const admin = require('firebase-admin');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
 require('./GoogleAuthSetUp')
@@ -16,7 +15,6 @@ const watchListRoute = require('./routes/watchlist');
 
 app.use(express.json());
 
-// Allow requests from localhost:3000
 app.use(cors({ origin: 'http://localhost:3000' }));
 
 app.use(passport.initialize());
@@ -214,50 +212,17 @@ app.get('/movie/:id', async (req, res) => { //for moviesdetails1
     }
 });
 
-// app.get('movies/featuredmovies/:id', async (req, res) => { //to get feautred movie detail
-
-// })
-
-// app.get('movies/recentmovies/:id', async (req, res) => {  //to get recent movie detail
-
-// })
-
-
-
-
-
-// app.get('/watchlist', authenticateToken, async (req, res) => {
-//     const { email } = req.user;
-//     try {
-//         const userSnapshot = await getDocs(usersRef);
-//         const user = userSnapshot.docs.find(doc => doc.data().email === email);
-//         const watchlist = user.data().watchlist;
-//         const movieSnapshot = await getDocs(moviesRef);
-//         const movies = movieSnapshot.docs.filter((movie) => watchlist.includes(movie.id));
-//         res.json(movies);
-//     }
-//     catch (error) {
-//         console.log(error);
-//     }
-// });
-
-// app.get('/')
 
 
 app.post('/reviews/:id', authenticateToken, async (req, res) => {
     const { email } = req.user;
     const { rating, review_title, review_body } = req.body.reviewData;
     const movie_id = req.params.id;
-    // console.log('rating', rating);
-    // console.log(review_title);
-    // console.log(review_body);
     try {
         const userSnapshot = await getDocs(usersRef);
         const user = userSnapshot.docs.find((doc) => doc.data().email === email);
-        // console.log(user.data());
         const moviesdocRef = doc(moviesRef, movie_id);
         const movie = await getDoc(moviesdocRef);
-        // console.log(movie.data());
 
         const newReview = {
             title: review_title,
@@ -268,7 +233,6 @@ app.post('/reviews/:id', authenticateToken, async (req, res) => {
             created_at: new Date().toISOString() // Add a timestamp in ISO 8601 format
         }
         let prevMovieReviews = movie.data().reviews;
-        // console.log(prevMovieReviews);
         prevMovieReviews.push(newReview);
         let updatedData = {
             reviews: prevMovieReviews,
@@ -276,7 +240,7 @@ app.post('/reviews/:id', authenticateToken, async (req, res) => {
         }
         await updateDoc(movie.ref, updatedData);
 
-        let prevUserReviews = user.data().reviews /*|| []*/;
+        let prevUserReviews = user.data().reviews;
         prevUserReviews.push(newReview);
         if (rating >= 8) {
             let prevTopPicks = user.data().topPicks;
@@ -325,36 +289,9 @@ app.get('/actors', async (req, res) => {
         id: doc.id,
         ...doc.data()
     }));
-    // console.log(actors);
     res.json(actors);
 });
 
-// app.get('/overwrite', async (req, res) => {
-//     // for (var i = 0; i < 60; i++) {
-//     //     let newfield = {
-//     //         name: '',
-//     //         bio: '',
-//     //         dob: '',
-//     //         image: '',
-//     //         movies: []
-//     //     };
-//     //     addDoc(actorsRef, newfield);
-//     // }
-//     // res.json('success');
-//     try {
-//         const moviesSnap = await getDocs(moviesRef);
-//         const updatePromises = moviesSnap.docs.map(doc => {
-//             let newfield = { watchlist: [] };
-//             return updateDoc(doc.ref, newfield);
-//         });
-
-//         await Promise.all(updatePromises); // Wait for all update operations to complete
-//         console.log("All documents updated successfully");
-//     } catch (error) {
-//         console.error("Error updating documents: ", error);
-//     }
-
-// });
 app.get('/overwrite', async (req, res) => {
     const movieSnapshot = await getDocs(moviesRef);
     let newfield = { watchlist: [] };
@@ -364,19 +301,10 @@ app.get('/overwrite', async (req, res) => {
     res.json('success');
 })
 
-// app.get('/createcollection', async (req, res) => {
-
-//     const temp = {
-//         'value': 'test'
-//     }
-//     addDoc(actorsRef, temp);
-
-// });
 
 
 app.get('/actorsdetails/:id', async (req, res) => {
     const actorId = req.params.id;
-    // console.log(actorId);
     try {
         const actorRef = doc(actorsRef, actorId);
         const actorSnapshot = await getDoc(actorRef);

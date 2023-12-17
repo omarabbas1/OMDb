@@ -15,7 +15,6 @@ const SucessAuth = ({ setUser }) => {
                     }
                 });
                 const data = await response.json();
-                // console.log(data);
                 if (data !== 'token expired') {
                     const response_ = await fetch('http://localhost:5000/signup', {
                         method: 'POST',

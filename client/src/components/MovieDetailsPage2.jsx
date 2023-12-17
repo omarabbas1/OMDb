@@ -15,13 +15,8 @@ const MovieDetailsPage2 = ({ user, setUser }) => {
 
     useEffect(() => {
         fetchWatchList();
-        // console.log(watchListStatus);
     }, []);
 
-    // useEffect(() => {
-    //     console.log(' Log when movie updates', movie);
-    //     console.log('Log when trailerUrl updates', trailerUrl); // Log when trailerUrl updates
-    // }, [movie, trailerUrl]);
 
     const fetchPage = async () => {
         try {
@@ -107,61 +102,6 @@ const MovieDetailsPage2 = ({ user, setUser }) => {
         navigate(`/movie/reviews/${id}`);
     }
     return (
-        // <div className="movies-details-page2">
-        //     <div className='movie-overview'>
-        //         <h2>{movie.name}</h2>
-        //         <h2>Genre: {movie.genre}</h2>
-        //     </div>
-        //     <div className="card-container">
-        //         <div key={movie.id} className="card">
-        //             <img className="card-img-top" src={movie.image} alt={movie.name} style={{ height: "380px", width: "100%" }} />
-        //             <div className="card-body">
-        //                 <button onClick={handleWatchList}>Add to Watchlist</button>
-        //             </div>
-        //         </div>
-        //     </div>
-        //     <div className='top-cast'>
-        //         {actorslist.length > 1 && movie.actors.map((actor) => {
-        //             const foundActor = actorslist.find((actorRec) => actorRec.name === actor);
-        //             if (foundActor) {
-        //                 return (
-        //                     <div className='actor-item'>
-        //                         <img src={foundActor.image} alt={actor} />
-        //                         <p>{actor}</p>
-        //                     </div>
-        //                 );
-        //             }
-        //             else {
-        //                 return null;
-        //             }
-        //         })}
-        //     </div>
-        //     <div className="trailer">
-        //         {trailerUrl && (
-        //             <iframe
-        //                 width="560"
-        //                 height="315"
-        //                 src={`${trailerUrl}?autoplay=1`}
-        //                 title="YouTube trailer"
-        //                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        //                 allowFullScreen
-        //             ></iframe>
-        //         )}
-        //     </div>
-        //     <div className='movie-information'>
-        //         <p>Director: {movie.director}</p>
-        //         <p>Writer: {movie.writer}</p>
-        //         <p>Star: {movie.star}</p>
-        //     </div>
-        //     <div className='movie-review'>
-        //         <button onClick={handleReviewPage}>View Movie Reviews</button>
-        //     </div>
-        // </div>
-        // Additional commented code
-        // <div className="featured-container">
-        //     <h2>Featured today</h2>
-
-        // </div>
         <div className="movies-details-page2">
             <div className="card-container">
                 <div key={movie.id} className="card">

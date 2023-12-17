@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../styles/WatchList.css'
 
 
-const Watchlist = (/*{ user }*/) => {
+const Watchlist = () => {
     const [watchList, setWatchList] = useState([]);
     const [reload, setReload] = useState(0);
     useEffect(() => {

@@ -70,7 +70,6 @@ const Signin = ({ user, setUser }) => {
                 body: JSON.stringify(signInInfo)
             })
             const data = await response.json();
-            // console.log(data);
             switch (data) {
                 case 'email not found':
                     SetEmailNotFound(true);
@@ -85,12 +84,6 @@ const Signin = ({ user, setUser }) => {
                     SetIncorrectPassword(false);
                     console.log('access granted');
                     window.localStorage.setItem('token', data.accessToken);
-                    // const response1 = await fetch('http://localhost:5000/token', {
-                    //     headers: {
-                    //         Authorization: `Bearer ${window.localStorage.getItem('token')}`
-                    //     }
-                    // });
-                    // const data1 = await response1.json();
                     setUser(data.userPayload);
                     navigate('/');
             }

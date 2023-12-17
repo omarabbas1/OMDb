@@ -35,11 +35,6 @@ const App = () => {
 
       }
     };
-    // window.addEventListener('storage', handleStorageChange);
-
-    // return () => {
-    //   window.removeEventListener('storage', handleStorageChange);
-    // }
     handleStorageChange();
   }, []);
 
@@ -53,7 +48,7 @@ const App = () => {
           <Route path='/signup' element={<SignUp />} />
           <Route path='/signin' element={<SignIn user={user} setUser={setUser} />} />
           <Route path='/search' element={<Search />} />
-          <Route path='/watchlist' element={<WatchList /*user={user}*/ />} />
+          <Route path='/watchlist' element={<WatchList />} />
           <Route path='/movies-db' element={<MoviesDb />} />
           <Route path='/success' element={<SucessAuth setUser={setUser} />} />
           <Route path='/profile' element={<Profile user={user} setUser={setUser} />} />

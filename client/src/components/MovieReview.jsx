@@ -14,10 +14,6 @@ const MovieReview = () => {
     });
     const [reviews, Setreviews] = useState([]);
     const [reload, setReload] = useState(0);
-    // const [filter, setFilter] = useState({
-    //     date: false,
-    //     rating: false
-    // })
 
     const fetchMovie = async () => {
         try {
@@ -25,7 +21,6 @@ const MovieReview = () => {
             const movie_ = await response.json();
             console.log(movie_);
             setMovie(movie_);
-            // console.log(reviews.length);
         }
         catch (error) {
             console.log(error);
@@ -82,27 +77,8 @@ const MovieReview = () => {
         }));
     }
 
-    // const handleFilterChange = (ratingValue, dateValue) => {
-    //     console.log(reviews);
-    //     if (ratingValue === 'highestToLowest') {
-    //         // console.log(reviews.sort((a, b) => b.rating - a.rating));
-    //         setReviewData(reviews.sort((a, b) => b.rating - a.rating));
-    //     }
-    //     else if (ratingValue === 'lowestToHighest') {
-    //         console.log(reviews);
-    //         console.log(reviews.sort((a, b) => a.rating - b.rating));
-    //         setReviewData(reviews.sort((a, b) => a.rating - b.rating));
-    //     }
-    //     if (dateValue === 'recent') {
-    //         setReviewData(reviews.sort((a, b) => new Date(a.created_at) - new Date(b.created_at)));
-    //     }
-    //     else if (dateValue === 'old') {
-    //         setReviewData(reviews.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)));
-    //     }
-    // };
     const handleFilterChange = (ratingValue, dateValue) => {
         let sortedReviews = [...reviews];
-        // console.log(ratingValue);
         if (dateValue === 'recent') {
             sortedReviews.sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
         } else if (dateValue === 'old') {
@@ -111,29 +87,11 @@ const MovieReview = () => {
         if (ratingValue === 'highestToLowest') {
             sortedReviews.sort((a, b) => b.rating - a.rating);
         } else if (ratingValue === 'lowestToHighest') {
-            // console.log('here')
             sortedReviews.sort((a, b) => a.rating - b.rating);
         }
         Setreviews(sortedReviews);
     };
 
-    // const handleChecked = async (e) => {
-    //     const { name, checked } = e.target;
-    //     setFilter(prevFilter => ({
-    //         ...prevFilter,
-    //         [name]: checked
-    //     }));
-    //     executeFilter();
-    // }
-
-    // const executeFilter = () => {
-    //     if (filter.rating) {
-    //         setReviewData(reviews.sort((a, b) => b.rating - a.rating));
-    //     }
-    //     if (filter.date) {
-    //         setReviewData(reviews.sort((a, b) => new Date(a.date) - new Date(b.date)));
-    //     }
-    // }
     const formatDate = (isoString) => {
         const date = new Date(isoString);
         const year = date.getFullYear();
@@ -182,29 +140,6 @@ const MovieReview = () => {
                         <FilterComponent onFilterChange={handleFilterChange} />
                     </div>
                     <h3>{reviews.length !== 0 && movie.review_count} Review(s):</h3>
-                    {/* Sort By:
-                        <label>Ratings
-                            <input type="checkbox" name='rating' checked={filter.rating} onChange={handleChecked} />
-                        </label>
-                        <label>Date
-                            <input type="checkbox" name='date' checked={filter.date} onChange={handleChecked} />
-                        </label> */}
-                    {/* Sort By:
-                        <label>Ratings
-                            <select onChange={ }>
-                                <option value="highesttolowest">Highest to Lowest</option>
-                                <option value="lowesttohighest">Lowest to Highest</option>
-                                {/* <input type="checkbox" name='rating' checked={filter.rating} onChange={handleChecked} /> */}
-                    {/* </select>
-                        </label>
-                        <label>Date
-                            <select onChange={ }>
-                                <option value="recent">Newest</option>
-                                <option value="old">Oldest</option>
-                                <input type="checkbox" name='rating' checked={filter.rating} onChange={handleChecked} />
-                            </select>
-                        </label>  */}
-
                     <div className='All-reviews'>
                         {reviews.length !== 0 && reviews.map((review) => (
                             <div className='review-item'>

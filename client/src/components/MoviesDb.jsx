@@ -32,9 +32,6 @@ const MoviesDb = () => {
 
     const [id, SetId] = useState('');
 
-    // const AddFormRef = useRef(null);
-    // const DeleteFormRef = useRef(null);
-
     const fetchMoviesDb = () => {
         const colref = collection(db, 'movies');
         getDocs(colref)

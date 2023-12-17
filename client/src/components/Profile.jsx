@@ -42,8 +42,6 @@ const Profile = ({ user, setUser }) => {
                     topPicks: data.topPicks,
                     reviews: data.reviews,
                 })
-
-                // console.log(profiledata);
             }
             catch (error) {
                 console.log(error);

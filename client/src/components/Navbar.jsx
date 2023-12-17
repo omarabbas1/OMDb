@@ -10,17 +10,10 @@ const Navbar = ({ user, setUser }) => {
         src: ''
     }
     const [profilePic, setProfilePic] = useState(status);
-    // const [selectedOption, SetSelectedOption] = useState('Profile');
     let name;
-    // const user = JSON.parse(window.localStorage.getItem('token'));
     if (user) {
         name = user.name;
     }
-    // const handleSearch = (e) => {
-    //     if (e.key === 'Enter') {
-    //         navigate(`/search?q=${searchValue}`);
-    //     }
-    // }
     const handleSelect = (e) => {
         const value = e.target.value;
         e.target.value = name;
@@ -72,8 +65,6 @@ const Navbar = ({ user, setUser }) => {
                 </div>
                 <div className="navbar-div2">
                     <input type="text" placeholder="Search OMDb" value={searchValue}
-                    /*onChange={(e) => SetSearchValue(e.target.value)}*/
-                    // onKeyDown={(e) => handleSearch(e)}
                     />
                 </div>
                 <div className="navbar-div3">
@@ -87,8 +78,6 @@ const Navbar = ({ user, setUser }) => {
                 </div>
                 <div className="navbar-div2">
                     <input type="text" placeholder="Search OMDb" value={searchValue}
-                    // onChange={(e) => SetSearchValue(e.target.value)}
-                    // onKeyDown={(e) => handleSearch(e)}
                     />
                 </div>
                 <div className="navbar-div3">
